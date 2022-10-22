@@ -12,7 +12,8 @@ const barEl = document.querySelector(".bar"),
 Progress =  document.querySelector("#topProg"),
 ProgThumb = document.querySelector("#thumbProg"),
 CopyBtn = document.querySelectorAll(".copybtn"),
-keyIntroEl = document.querySelector(".closeBtn-kb")
+keyIntroEl = document.querySelector(".closeBtn-kb"),
+shareBtn = document.querySelectorAll(".share")
 
 /////////////////
 const audioEl = new Audio("Himala.ogg");
@@ -88,6 +89,13 @@ nextBtn.addEventListener("click", () => {
   }
   next(index)
 })
+
+shareBtn.forEach((elem) => {
+  elem.addEventListener("click", ()=>{
+    shareit()
+    console.log("click on share");
+  })
+});
 window.addEventListener("keydown", (e) => {
   if (e.key === "n") {
     if (index = updateIndex() >= timeCode.length - 1) {
@@ -190,5 +198,11 @@ CopyBtn.forEach((e, i) => {
     }
   })
 })
-uRL = window.location.href.slice(7)
-console.log(uRL);
+function shareit(){
+  var url = window.location.href; //Set desired URL here
+  var img="https://i.ytimg.com/vi/U52B4t2dxhY/maxresdefault.jpg"; //Set Desired Image here
+  var totalurl=encodeURIComponent(url+'?img='+img);
+  
+  window.open ('http://www.facebook.com/sharer.php?u='+totalurl,'','width=500, height=500, scrollbars=yes, resizable=no');
+  
+}
