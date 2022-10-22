@@ -200,7 +200,7 @@ CopyBtn.forEach((e, i) => {
 })
 function shareit(){
   var url = window.location.href; //Set desired URL here
-  var img="https://i.ytimg.com/vi/U52B4t2dxhY/maxresdefault.jpg"; //Set Desired Image here
+  var img="himalaImg.jpg"; //Set Desired Image here
   var totalurl=encodeURIComponent(url+'?img='+img);
   
   window.open ('http://www.facebook.com/sharer.php?u='+totalurl,'','width=500, height=500, scrollbars=yes, resizable=no');
