@@ -176,9 +176,9 @@ function scroll(index) {
     behavior: 'smooth'
   })
   poetryBox.forEach((e) => {
-    e.style.border = "3px solid #e4e4e4"
+    e.style.border = "1.5px solid #e4e4e4"
   })
-  poetryBox[index].style.border = "3px solid black"
+  poetryBox[index].style.border = "1.5px solid black"
 }
 CopyBtn.forEach((e, i) => {
   e.addEventListener("click", () => {
