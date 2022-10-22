@@ -1,0 +1,304 @@
+@font-face {
+    font-family: 'jameel-noori';
+    src: url(fonts/JameelNoori.woff),local("Jameel Noori Nastaleeq Regular"), local("Jameel Noori Nastaleeq"),local("Jameel Noori"),local("Jameel-Noori-Nastaleeq-Regular");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    caret-color: transparent;
+}
+
+body {
+    background-color: #F0F7F4;
+    color: #223127;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    padding: 10px;
+}
+
+.main-container {
+    position: relative;
+    width: 100vw;
+    padding: 20px 60px;
+    margin: 40px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container>h2 {
+    padding-bottom: 50px;
+
+}
+
+.poetry-box {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 9px;
+    border: 3px solid #e4e4e4;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+}
+
+.box-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.poetry {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'jameel-noori';
+}
+
+.urdu {
+    font-family: 'jameel-noori' !important;
+}
+
+.icon-btn {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #e4e4e4;
+    position: relative;
+}
+
+.icon-btn::after {
+    content: '';
+    height: 40px;
+    width: 40px;
+    background-color: aquamarine;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -111;
+    visibility: hidden;
+}
+
+.icon-btn:hover::after {
+    visibility: visible;
+}
+
+.icon-btn img {
+    height: 20px;
+    width: 20px;
+}
+
+.player {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #F0F7F4;
+    box-shadow: 1px 0 10px rgba(0, 0, 0, .2);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 10px;
+}
+
+.player.active {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    height: 4px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+input[type=range] {
+    width: 100%;
+    background-color: rgb(0, 0, 0, .2);
+    height: 4px;
+    -webkit-appearance: none;
+    position: absolute;
+    top: 0;
+    z-index: 33;
+    cursor: pointer;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: black;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.bar {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.player .controls {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.player .controls .C-time,
+.player .controls .T-time {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.player .controls .buttons {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 30px;
+}
+
+.player .controls .buttons .prev,
+.player .controls .buttons .paly-pause,
+.player .controls .buttons .next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.player .controls .buttons .prev img,
+.player .controls .buttons .paly-pause img,
+.player .controls .buttons .next img {
+    height: 24px
+}
+
+.ProgressBar {
+    position: relative;
+}
+
+#topProg {
+    height: 4px;
+    width: 20%;
+    background-color: black;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#thumbProg {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: black;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+}
+
+.keyboard-intro {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    height: 200px;
+    width: 350px;
+    border: 2px solid #e4e4e4;
+    border-radius: 17px;
+    background-color: #F0F7F4;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animation 3s ease-in;
+}
+
+.keyboard-intro .key {
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+.keyboard-intro .key span {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid rgba(0, 0, 0, 0.582);
+    border-radius: 9px;
+    padding: 5px 10px;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 700;
+    margin-right: 15px;
+}
+.closeBtn-kb{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #c4c4c4;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.closeBtn-kb::after{
+    content: '';
+    height: 2px;
+    width: 15px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    border-radius: 20px;
+}
+.closeBtn-kb::before{
+    content: '';
+    height: 2px;
+    width: 15px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    border-radius: 20px;
+}
+.keyboard-intro.active{
+    display: none;
+}
+@keyframes animation {
+    0%{
+        right: -1000px;
+        display: none;
+    }
+    100%{
+        right: 20px;
+        display: block;
+    }
+}
