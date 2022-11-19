@@ -122,12 +122,12 @@ function playPause() {
   if (count == 0) {
     count = 1
     audioEl.play();
-    playPauseicon.src = "images/pause_icon.png"
+    playPauseicon.src = "images/pause_icon.webp"
     interval = setInterval(updateIndex, 1000);
   } else {
     count = 0
     audioEl.pause();
-    playPauseicon.src = "images/play_icon.png"
+    playPauseicon.src = "images/play_icon.webp"
     clearInterval(interval)
   }
 }
